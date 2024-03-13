@@ -1,2 +1,7 @@
-# NN-g-Technical-Exercise
-NN/g Senior Frontend Developer
+# TypeScript Next.js example
+
+This is a really simple project that shows the usage of Next.js with TypeScript.
+
+
+
+
