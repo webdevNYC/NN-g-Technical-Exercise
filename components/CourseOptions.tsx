@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CourseCardType } from "../interfaces";
 import CourseCard from "./CourseCard";
 import { BookmarkIcon } from "../utils/icons";
+import FavoriteButton from "./FavoriteButton";
 type CourseOptionsProps = {
   courseId: number;
   items: CourseCardType[];
@@ -12,7 +13,6 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Enrolled in course Class ID: ", selectedCourse);
     const alertMsg = `Enrolled in Course Id: ${courseId} at the Class Id: ${selectedCourse}`
     alert(alertMsg)
     // Further processing like an API call to enroll in the course
@@ -23,23 +23,22 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='w-[536px] px-8 py-6 bg-white rounded-2xl flex flex-col justify-center items-center gap-6'>
-      <div className='text-black text-4xl font-semibold leading-10'>
-        Course Dates
-      </div>
-      {items.map((item, index) => (
-        <CourseCard course={item} key={index} onChange={handleRadioChange} />
-      ))}
-      <button type="submit" className='self-stretch px-4 py-2 bg-red-600 rounded-md justify-center items-center gap-2.5 inline-flex text-center text-white text-2xl font-bold font-["Source Sans Pro"] leading-loose'>
-        Enroll in Course
-      </button>
-      <div className='p-2 rounded-md justify-center items-center gap-2 inline-flex text-sky-600 '>
-        <div className='w-7 h-7 relative'> <BookmarkIcon /></div>
-        <div className="text-lg font-semibold leading-normal">
-          Save Course
+    <div>
+      <form onSubmit={handleSubmit} className='w-[536px] px-8 py-6 bg-white rounded-2xl flex flex-col justify-center items-center gap-6'>
+        <div className='text-black text-4xl font-semibold leading-10'>
+          Course Dates
         </div>
-      </div>
-    </form>
+        {items.map((item, index) => (
+          <CourseCard course={item} key={index} onChange={handleRadioChange} />
+        ))}
+        <button type="submit" className='self-stretch px-4 py-2 bg-red-600 rounded-md justify-center items-center gap-2.5 inline-flex text-center text-white text-2xl font-bold font-["Source Sans Pro"] leading-loose'>
+          Enroll in Course
+        </button>
+
+      </form>
+      <FavoriteButton courseId={courseId} />
+
+    </div>
   );
 };
 
