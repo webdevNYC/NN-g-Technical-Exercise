@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BookmarkIcon } from '../utils/icons';
+import React, { useState, useEffect } from "react";
+import { BookmarkIcon } from "../utils/icons";
 
 interface FavoriteButtonProps {
     courseId: number;
@@ -30,9 +30,9 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ courseId }) => {
             //Force to toggle for the prototype
             let updatedSavedCourses;
             if (savedCourses.length > 0) {
-                updatedSavedCourses = []//await response.json();
+                updatedSavedCourses = []; //await response.json();
             } else {
-                updatedSavedCourses = [101]
+                updatedSavedCourses = [101];
             }
             setSavedCourses(updatedSavedCourses);
         } catch (error) {
@@ -43,10 +43,15 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ courseId }) => {
     const isSaved = savedCourses.includes(courseId);
 
     return (
-        <div className=' w-[536px] px-8 py-6 rounded-md justify-center items-center gap-2 inline-flex text-sky-600 '>
-            <div className='w-7 h-7 relative'> <BookmarkIcon /></div>
-            <button onClick={handleToggleSave} className="text-lg font-semibold leading-normal">
-                {isSaved ? 'Remove from Favorites' : 'Save Course'}
+        <div className='py-6 gap-2 inline-flex text-blue-50 hover:text-black '>
+            <div className='w-7 h-7 relative'>
+                {" "}
+                <BookmarkIcon />
+            </div>
+            <button
+                onClick={handleToggleSave}
+                className='text-lg font-semibold leading-normal'>
+                {isSaved ? "Remove from Favorites" : "Save Course"}
             </button>
         </div>
     );

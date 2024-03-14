@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { CourseCardType } from "../interfaces";
 import CourseCard from "./CourseCard";
-import { BookmarkIcon } from "../utils/icons";
 import FavoriteButton from "./FavoriteButton";
 type CourseOptionsProps = {
   courseId: number;
@@ -9,12 +8,12 @@ type CourseOptionsProps = {
 };
 
 const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
-  const [selectedCourse, setSelectedCourse] = useState('');
+  const [selectedCourse, setSelectedCourse] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const alertMsg = `Enrolled in Course Id: ${courseId} at the Class Id: ${selectedCourse}`
-    alert(alertMsg)
+    const alertMsg = `Enrolled in Course Id: ${courseId} at the Class Id: ${selectedCourse}`;
+    alert(alertMsg);
     // Further processing like an API call to enroll in the course
   };
 
@@ -23,21 +22,23 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className='w-[536px] px-8 py-6 bg-white rounded-2xl flex flex-col justify-center items-center gap-6'>
-        <div className='text-black text-4xl font-semibold leading-10'>
+    <div className="w-[536px] px-8 py-6 flex flex-col justify-center items-center">
+      <form
+        onSubmit={handleSubmit}
+        className='self-stretch bg-white rounded-2xl flex flex-col justify-center items-center gap-6'>
+        <div className='text-4xl font-semibold leading-10'>
           Course Dates
         </div>
         {items.map((item, index) => (
           <CourseCard course={item} key={index} onChange={handleRadioChange} />
         ))}
-        <button type="submit" className='self-stretch px-4 py-2 bg-red-600 rounded-md justify-center items-center gap-2.5 inline-flex text-center text-white text-2xl font-bold font-["Source Sans Pro"] leading-loose'>
+        <button
+          type='submit'
+          className='self-stretch py-2 text-slate-50 bg-primary-60 rounded-md justify-center items-center gap-2.5 inline-flex text-center text-2xl font-bold  leading-loose focus:bg-primary-40 focus:border focus:border-primary-20 hover:bg-primary-40'>
           Enroll in Course
         </button>
-
       </form>
       <FavoriteButton courseId={courseId} />
-
     </div>
   );
 };

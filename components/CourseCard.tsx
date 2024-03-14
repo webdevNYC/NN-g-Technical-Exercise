@@ -7,20 +7,19 @@ interface CourseCardProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 const CourseCard: React.FC<CourseCardProps> = ({ course, onChange }) => {
-
   return (
-    <div className='px-6 py-8 bg-white rounded-lg border-2 border-stone-300 flex flex-col justify-start items-start gap-4'>
+    <div className='px-6 py-8 bg-white rounded-lg border-2 border-stone-300 flex flex-col justify-start items-start gap-4 hover:border-primary-20 focus:border-blue-50'>
       <div className='h-6 justify-start items-center gap-2 inline-flex'>
         <div className='p-0.5 rounded-lg flex items-center gap-2.5'>
-
-          <div className="flex items-center">
+          <div className='flex items-center'>
             <input
-              type="radio"
-              name="courseSelection"
+              type='radio'
+              name='courseSelection'
               value={course.id}
               id={`course-${course.id}`}
-              className="form-radio rounded text-sky-600"
-              onChange={onChange} // Apply the onChange handler to the radio input
+              className='form-radio text-blue-50 border-2 border-blue-50 focus:ring-blue-50'
+              onChange={onChange}
+              style={{ width: "20px", height: "20px" }} // Adjust size directly
             />
           </div>
         </div>
@@ -30,10 +29,15 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, onChange }) => {
         <div className='flex-1'>
           <div className='w-80 pl-8 pr-2 flex-col justify-start items-start gap-4 inline-flex'>
             <div className='self-stretch h-36 flex-col justify-start items-start gap-1 flex'>
-              <div className="self-stretch text-black text-3xl font-bold font-['Source Sans Pro'] leading-9">
+              <div className='self-stretch text-black text-3xl leading-9'>
                 {formatClassSchedule(course.dates)}
               </div>
-              <div>{course.location.timezone} time</div>
+              <div>
+                {course.location.timezone === "America/New_York"
+                  ? "New York City"
+                  : course.location.timezone}{" "}
+                Time
+              </div>
             </div>
             <div className='text-lg leading-normal'>
               <strong>${course.pricing.amount}</strong>{" "}
