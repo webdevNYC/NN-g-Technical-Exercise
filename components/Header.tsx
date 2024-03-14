@@ -1,7 +1,3 @@
-// Importing necessary FontAwesome components and the LinkedIn icon
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
 const Header: React.FC = () => {
   return (
     <header className='bg-black py-5'>
@@ -11,16 +7,13 @@ const Header: React.FC = () => {
             NN/g Senior Frontend Developer - Technical Exercise
           </h1>
           <p className='text-md text-white inline-flex items-center justify-end'>
-            Adriana Fruchter
+
             <a
-              href='https://www.linkedin.com/in/your-linkedin-id'
+              href='https://www.linkedin.com/in/adriana-fruchter/'
               target='_blank'
               rel='noopener noreferrer'
               className='ml-2'>
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className='text-blue-600 h-5 w-5'
-              />
+              Adriana Fruchter
             </a>
           </p>
         </div>
