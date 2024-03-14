@@ -33,6 +33,12 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
       <button type="submit" className='self-stretch px-4 py-2 bg-red-600 rounded-md justify-center items-center gap-2.5 inline-flex text-center text-white text-2xl font-bold font-["Source Sans Pro"] leading-loose'>
         Enroll in Course
       </button>
+      <div className='p-2 rounded-md justify-center items-center gap-2 inline-flex text-sky-600 '>
+        <div className='w-7 h-7 relative'> <BookmarkIcon /></div>
+        <div className="text-lg font-semibold leading-normal">
+          Save Course
+        </div>
+      </div>
     </form>
   );
 };
