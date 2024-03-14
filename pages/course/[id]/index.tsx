@@ -25,7 +25,7 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
             title={`${item ? item.id : "Course Options - Technical Exercise"
                 } NN/g Senior Frontend Developer - Technical Exercise`}
         >
-            {item && <CourseOptions items={item.options} />}
+            {item && <CourseOptions items={item.options} courseId={item.id} />}
         </Layout>
     );
 };

@@ -2,11 +2,11 @@ import React from "react";
 import { CourseCardType } from "../interfaces";
 import { formatClassSchedule, formatPricingDate } from "../utils/utils";
 
-
 interface CourseCardProps {
   course: CourseCardType;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
+const CourseCard: React.FC<CourseCardProps> = ({ course, onChange }) => {
 
   return (
     <div className='px-6 py-8 bg-white rounded-lg border-2 border-stone-300 flex flex-col justify-start items-start gap-4'>
@@ -20,6 +20,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               value={course.id}
               id={`course-${course.id}`}
               className="form-radio rounded text-sky-600"
+              onChange={onChange} // Apply the onChange handler to the radio input
             />
           </div>
         </div>
