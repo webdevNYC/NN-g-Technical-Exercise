@@ -22,7 +22,7 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
   };
 
   return (
-    <div className="w-[536px] px-8 py-6 flex flex-col justify-center items-center">
+    <div className="px-8 py-6 flex flex-col justify-center items-center">
       <form
         onSubmit={handleSubmit}
         className='self-stretch bg-white rounded-2xl flex flex-col justify-center items-center gap-6'>
@@ -34,7 +34,7 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
         ))}
         <button
           type='submit'
-          className='self-stretch py-2 text-slate-50 bg-primary-60 rounded-md justify-center items-center gap-2.5 inline-flex text-center text-2xl font-bold  leading-loose focus:bg-primary-40 focus:border focus:border-primary-20 hover:bg-primary-40'>
+          className='w-[452px] lg:w-[452px] sm:w-[260px] py-2 text-slate-50 bg-primary-60 rounded-md justify-center items-center gap-2.5 inline-flex text-center text-2xl font-bold  leading-loose focus:bg-primary-40 focus:border focus:border-primary-20 hover:bg-primary-40'>
           Enroll in Course
         </button>
       </form>
