@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import Header from "./Header";
+import { Analytics } from "@vercel/analytics/react"
 
 type Props = {
   children?: ReactNode;
@@ -16,6 +17,7 @@ const Layout = ({ children, title = "Course title" }: Props) => (
     <Header />
     <div className="px-2 md:px-8 lg:px-16 xl:px-28">
       {children}
+      <Analytics />
     </div>
     <footer className="pt-12 px-4 md:px-8 lg:px-16 xl:px-28">
       <hr />
