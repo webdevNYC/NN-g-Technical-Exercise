@@ -14,10 +14,10 @@ const Layout = ({ children, title = "Course title" }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Header />
-    <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-28">
+    <div className="px-2 md:px-8 lg:px-16 xl:px-28">
       {children}
     </div>
-    <footer className="pt-12 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-28">
+    <footer className="pt-12 px-4 md:px-8 lg:px-16 xl:px-28">
       <hr />
       <span className="text-sm text-gray-600">Adriana Fruchter email: adrianafruchter@gmail.com p: 9176120163</span>
     </footer>

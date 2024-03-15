@@ -24,11 +24,11 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
   return (
     // CourseOptions.js
     // Adjust the main container and form elements for better mobile responsiveness
-    <div className='px-4 py-4 sm:px-8 sm:py-6 flex flex-col justify-center items-center'>
+    <div className='md:px-4 md:py-4 py-2 flex flex-col justify-center items-center'>
       <form
         onSubmit={handleSubmit}
-        className='w-full max-w-md mx-auto bg-white rounded-2xl flex flex-col justify-center items-center gap-4 sm:gap-6'>
-        <div className='text-2xl sm:text-3xl md:text-4xl font-semibold text-center'>
+        className='w-full max-w-md mx-auto bg-white rounded-2xl flex flex-col justify-center items-center gap-4'>
+        <div className='text-2xl md:text-4xl font-semibold text-center'>
           Course Dates
         </div>
         {items.map((item, index) => (
@@ -41,7 +41,7 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
         ))}
         <button
           type='submit'
-          className='w-full px-4 py-2 sm:w-[452px] text-center text-lg sm:text-xl md:text-2xl font-bold bg-primary-60 rounded-md hover:bg-primary-40'>
+          className='w-full px-4 py-2 text-center text-lg sm:text-xl md:text-2xl font-bold text-white bg-primary-60 rounded-md hover:bg-primary-40'>
           Enroll in Course
         </button>
       </form>

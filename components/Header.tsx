@@ -1,7 +1,7 @@
 const Header: React.FC = () => {
   return (
     <header className='bg-black py-5'>
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='container mx-auto px-4 lg:px-8'>
         <div className='text-right'>
           <h1 className='text-xl font-semibold text-white'>
             NN/g Senior Frontend Developer - Technical Exercise

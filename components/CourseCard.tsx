@@ -10,8 +10,9 @@ interface CourseCardProps {
 const CourseCard: React.FC<CourseCardProps> = ({ course, isSelected, onChange }) => {
   return (
     // Use label to make entire card clickable
-    <label htmlFor={`course-${course.id}`} className='block'>
-      <div className='flex flex-col flex-wrap content-center gap-4 px-6 py-8 bg-white rounded-lg border-2 border-stone-300 hover:border-primary-20 focus:border-blue-50'>
+
+    <div className='flex flex-col flex-wrap content-center gap-4 px-6 py-8 bg-white rounded-lg border-2 border-stone-300 hover:border-primary-20 focus:border-blue-50'>
+      <label htmlFor={`course-${course.id}`} className='block'>
         <div className='h-6 justify-start items-center gap-2 inline-flex'>
           <div className='p-0.5 rounded-lg flex items-center gap-2.5'>
             <div className='flex items-center'>
@@ -69,8 +70,9 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, isSelected, onChange })
             </div>
           </div>
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
+
   );
 };
 export default CourseCard;

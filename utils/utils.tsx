@@ -23,7 +23,7 @@ export function formatClassSchedule(dates) {
     });
     return (
       <>
-        <div>
+        <div className='font-bold'>
           {weekday}, {monthDay}
         </div>
         <div className='font-normal leading-tight'>
