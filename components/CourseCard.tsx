@@ -11,7 +11,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, isSelected, onChange })
   return (
     // Use label to make entire card clickable
     <label htmlFor={`course-${course.id}`} className='block'>
-      <div className='px-6 py-8 bg-white rounded-lg border-2 border-stone-300 flex flex-col justify-start items-start gap-4 hover:border-primary-20 focus:border-blue-50'>
+      <div className='flex flex-col flex-wrap content-center gap-4 px-6 py-8 bg-white rounded-lg border-2 border-stone-300 hover:border-primary-20 focus:border-blue-50'>
         <div className='h-6 justify-start items-center gap-2 inline-flex'>
           <div className='p-0.5 rounded-lg flex items-center gap-2.5'>
             <div className='flex items-center'>
@@ -24,12 +24,13 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, isSelected, onChange })
                 onChange={onChange}
                 checked={isSelected} // Controlled component
                 style={{ width: "20px", height: "20px" }} // Adjust size directly
+              // hidden // Hide the default radio button
               />
             </div>
           </div>
           <div className='text-pink-950 text-xl font-bold'>Virtual Course</div>
         </div>
-        <div className='flex flex-row items-center justify-between'>
+        <div className='flex flex-wrap flex-row items-center justify-between'>
           <div className='flex-1'>
             <div className='w-80 pl-8 pr-2 flex-col justify-start items-start gap-4 inline-flex'>
               <div className='self-stretch h-36 flex-col justify-start items-start gap-1 flex'>

@@ -22,19 +22,26 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
   };
 
   return (
-    <div className="px-8 py-6 flex flex-col justify-center items-center">
+    // CourseOptions.js
+    // Adjust the main container and form elements for better mobile responsiveness
+    <div className='px-4 py-4 sm:px-8 sm:py-6 flex flex-col justify-center items-center'>
       <form
         onSubmit={handleSubmit}
-        className='self-stretch bg-white rounded-2xl flex flex-col justify-center items-center gap-6'>
-        <div className='text-4xl font-semibold leading-10'>
+        className='w-full max-w-md mx-auto bg-white rounded-2xl flex flex-col justify-center items-center gap-4 sm:gap-6'>
+        <div className='text-2xl sm:text-3xl md:text-4xl font-semibold text-center'>
           Course Dates
         </div>
         {items.map((item, index) => (
-          <CourseCard course={item} key={index} onChange={handleRadioChange} isSelected={selectedCourse === item.id.toString()} />
+          <CourseCard
+            course={item}
+            key={index}
+            onChange={handleRadioChange}
+            isSelected={selectedCourse === item.id.toString()}
+          />
         ))}
         <button
           type='submit'
-          className='w-[452px] lg:w-[452px] sm:w-[260px] py-2 text-slate-50 bg-primary-60 rounded-md justify-center items-center gap-2.5 inline-flex text-center text-2xl font-bold  leading-loose focus:bg-primary-40 focus:border focus:border-primary-20 hover:bg-primary-40'>
+          className='w-full px-4 py-2 sm:w-[452px] text-center text-lg sm:text-xl md:text-2xl font-bold bg-primary-60 rounded-md hover:bg-primary-40'>
           Enroll in Course
         </button>
       </form>
