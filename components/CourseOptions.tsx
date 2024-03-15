@@ -30,7 +30,7 @@ const CourseOptions: React.FC<CourseOptionsProps> = ({ courseId, items }) => {
           Course Dates
         </div>
         {items.map((item, index) => (
-          <CourseCard course={item} key={index} onChange={handleRadioChange} />
+          <CourseCard course={item} key={index} onChange={handleRadioChange} isSelected={selectedCourse === item.id.toString()} />
         ))}
         <button
           type='submit'
